@@ -195,7 +195,7 @@ slug: "/about"
 
 #### Changing the "Hero" text
 
-To edit the hero text ("Hi, I'm Lupin...), create a file at `src/@lekoarts/gatsby-theme-minimal-blog/texts/hero.mdx` to edit the text.
+To edit the hero text ("Hi, I'm Devansh Mehra), create a file at `src/@lekoarts/gatsby-theme-minimal-blog/texts/hero.mdx` to edit the text.
 
 #### Changing the "Projects" part
 
