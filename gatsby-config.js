@@ -28,7 +28,7 @@ module.exports = {
         externalLinks: [
           {
             name: `Twitter`,
-            url: `https://twitter.com/lekoarts_de`,
+            url: `https://twitter.com/mehra_devansh`,
           },
           {
             name: `Homepage`,
