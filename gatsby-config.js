@@ -5,7 +5,8 @@ const googleAnalyticsTrackingId = process.env.GOOGLE_ANALYTICS_ID
 
 module.exports = {
   siteMetadata: {
-    siteTitleAlt: `Minimal Blog - Gatsby Theme`,
+    siteTitle: `Devansh Mehra`,
+    siteTitleAlt: `Devansh Mehhra`,
   },
   flags: {
     FAST_DEV: true,
@@ -31,8 +32,8 @@ module.exports = {
             url: `https://twitter.com/mehra_devansh`,
           },
           {
-            name: `Homepage`,
-            url: `https://www.lekoarts.de?utm_source=minimal-blog&utm_medium=Starter`,
+            name: `Github`,
+            url: `https://github.com/DevanshMehra`,
           },
         ],
       },
@@ -62,9 +63,9 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `minimal-blog - @lekoarts/gatsby-theme-minimal-blog`,
-        short_name: `minimal-blog`,
-        description: `Typography driven, feature-rich blogging theme with minimal aesthetics. Includes tags/categories support and extensive features for code blocks such as live preview, line numbers, and code highlighting.`,
+        name: `Devansh Mehra`,
+        short_name: `Devansh Mehra`,
+        description: `minimal blog`,
         start_url: `/`,
         background_color: `#fff`,
         theme_color: `#6B46C1`,
