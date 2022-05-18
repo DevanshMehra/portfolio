@@ -29,14 +29,34 @@ brew upgrade
 ----
 | Shell Programs     | Purpose |
 | ----------- | ----------- |
-| git         | Title       |
-| Paragraph   | Text        |
+| [git](https://git-scm.com/docs/git-shell)| Version control |
+| bat         | cat alternative |
+| exa         | 	ls alternative       |
+| [tldr](https://tldr.sh/) | man alternative      |
 
+Here are some the applications I always install (cask flag in Homebrew):
+
+
+**_NOTE:_** Do not install Node.js through Homebrew. Use nvm (below).
 
 | Application     | Purpose |
 | ----------- | ----------- |
 | Visual Studio Code        | text editor       |
-| Google Chrome   | Text        |
+| Google Chrome   | web browser       |
+| Firefox         | web browser       |
+| Rectangle        | window resizing       |
+| iTerm2        | terminal       |
+| Docker   | 	development       |
+| Slack  | communication       |
+| Spotify | music       |
+| Postgres  | 	database       |
+| Postico  | 	database UI       |
+| Postman  | API Tool      |
+| Notion  | 	Notes       |
+| Todoist | 	Todos      |
+
+
+
 
 ```
 ## Shell Programs
@@ -63,5 +83,109 @@ brew install --cask \
   bear \
   todoist \
   ```
+### Shell
+Catalina comes with zsh as the default shell. Install Oh My Zsh for sensible defaults.Catalina comes with zsh as the default shell. Install Oh My Zsh for sensible defaults.
+
+```
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+
+### Node.js
+Use Node Version Manager (nvm) to install Node.js. This allows you to easily switch between Node versions, which is essential.
+
+```
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+```
+
+
+#### Install
+I recommand using LTS  
+```
+nvm install --lts 
+```
+Restart terminal and run the final command.
+
+```
+nvm use node
+```
+Confirm that you are using the latest version of Node and npm.
+```
+node -v && npm -v
+```
+
+### Git
+
+The first thing you should do with Git is [set your global configuration](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup).
+
+```
+touch ~/.gitconfig
+```
+Input your config and create some aliases.
+```
+[user]
+  name   = Firstname Lastname
+  email  = you@example.com
+[github]
+  user   = username
+[alias]
+  a      = add
+  ca     = commit -a
+  cam    = commit -am
+  cm     = commit -m
+  s      = status
+  p      = push
+  pom    = push origin master
+  puom   = pull origin master
+  cob    = checkout -b
+  co     = checkout
+  fp     = fetch --prune --all
+  l      = log --oneline --decorate --graph
+  lall   = log --oneline --decorate --graph --all
+  ls     = log --oneline --decorate --graph --stat
+  lt     = log --graph --decorate --pretty=format:'%C(yellow)%h%Creset%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)%an%Creset'
+```
+With the above aliases, I can run git s instead of git status, for example. The less I have to type, the happier I am.
+
+
+### SSH
+
+You can [generate an SSH key](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/) to distribute.
+
+```
+ssh-keygen -t ed25519 -C "your_email@example.com"
+```
+Start ssh-agent.
+
+eval "$(ssh-agent -s)"
+Add key.
+
+```
+ssh-add -K ~/.ssh/id_rsa
+```
+
+#### Config
+Simplify the process of SSHing into other boxes with your SSH config file. Create ~/.ssh/config if it does not already exist.
+
+Add the following contents, changing the variables for any hosts that you connect to. Using the below will be the same as running ssh -i ~/.ssh/key.pem user@example.com.
+
+<mark>~/.ssh/config</mark>
+
+```
+Host *
+  AddKeysToAgent yes
+  UseKeychain yes
+  IdentityFile ~/.ssh/id_ed25519
+
+Host myssh
+  HostName example.com
+  User user
+  IdentityFile ~/.ssh/key.pem
+```
+Now just run the alias to connect.
+```
+ssh myssh
+```
+
+
 If you liked the write-up, leave your feedback and suggestions :)
 
