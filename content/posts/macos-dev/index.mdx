@@ -30,8 +30,9 @@ brew upgrade
 | Shell Programs     | Purpose |
 | ----------- | ----------- |
 | [git](https://git-scm.com/docs/git-shell)| Version control |
-| bat         | cat alternative |
-| exa         | 	ls alternative       |
+| [bat](https://github.com/sharkdp/bat)         | cat alternative |
+| [fzf](https://github.com/junegunn/fzf)         | search |
+| [exa](https://the.exa.website/)         | 	ls alternative       |
 | [tldr](https://tldr.sh/) | man alternative      |
 
 Here are some the applications I always install (cask flag in Homebrew):
@@ -41,19 +42,20 @@ Here are some the applications I always install (cask flag in Homebrew):
 
 | Application     | Purpose |
 | ----------- | ----------- |
-| Visual Studio Code        | text editor       |
-| Google Chrome   | web browser       |
-| Firefox         | web browser       |
-| Rectangle        | window resizing       |
-| iTerm2        | terminal       |
-| Docker   | 	development       |
-| Slack  | communication       |
-| Spotify | music       |
-| Postgres  | 	database       |
-| Postico  | 	database UI       |
-| Postman  | API Tool      |
-| Notion  | 	Notes       |
-| Todoist | 	Todos      |
+| [Visual Studio Code](https://code.visualstudio.com/)        | text editor       |
+| [Google Chrome](https://www.google.com/chrome/)   | web browser       |
+| [Firefox](https://www.mozilla.org/en-US/firefox/products/)         | web browser       |
+| [Rectangle](https://rectangleapp.com/)        | window resizing       |
+| [iTerm2](https://iterm2.com/)      | terminal       |
+| [Docker](https://www.docker.com/) | 	development       |
+| [Slack](https://slack.com/) | communication     |
+| [Discord](https://www.discord.com/)  | communication       |
+| [Spotify](https://spotify.com/)  | music       |
+| [Postgres](https://www.postgresql.org/) | 	database       |
+| [Postico](https://eggerapps.at/postico/) | 	database UI       |
+| [Postman](https://www.postman.com/) | API Tool      |
+| [Notion](https://www.notion.so/) | 	Notes       |
+| [Todoist](https://www.todoist.com/)  | 	Todos      |
 
 
 
@@ -112,6 +114,12 @@ Confirm that you are using the latest version of Node and npm.
 ```
 node -v && npm -v
 ```
+#### update
+For later, here's how to update nvm.
+```
+nvm install node --reinstall-packages-from=node
+```
+
 
 ### Git
 
@@ -168,7 +176,7 @@ Simplify the process of SSHing into other boxes with your SSH config file. Creat
 
 Add the following contents, changing the variables for any hosts that you connect to. Using the below will be the same as running ssh -i ~/.ssh/key.pem user@example.com.
 
-<mark>~/.ssh/config</mark>
+~/.ssh/config
 
 ```
 Host *
