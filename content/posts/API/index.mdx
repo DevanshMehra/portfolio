@@ -1,8 +1,150 @@
 ---
-title: Getting started API
-date: 2021-04-05
+title: What are APIs and how do APIs work?
+date: 2022-04-05
 description: api  
 tags:
   - API
   - 
 ---
+
+We have all used Google Maps to look up directions when driving to an unfamiliar place. But the thing is, a service like that can be useful to a lot of applications. Say you are using a cab ordering application, the app requires a fully functional, regularly updated map to mark your pickup and drop points and manage its fleet of vehicles. Or a food ordering service, which needs highly detailed location data to deliver your order on time. In each of these instances, do developers create this functionality from scratch? No, not at all.
+
+One of the guiding principles of software development is that you should never reinvent the wheel. If Google already runs a comprehensive map service, you can simply request the information from them. This is precisely what an API is all about. But what is an API? How does it work? Does it really help to know about it?
+
+
+### What is an API?
+
+Consider a car. Unless you are a mechanic, you likely have no idea of how its engine works. Or any of its internal mechanisms for that matter, from the gears to the braking system. Yet you can drive the car. You know how to stop the car, how to get it moving, and how to speed it up. How is this made possible?
+
+Through an interface.
+
+The steering wheel, the accelerator, the gearbox; these are the components that make up a car’s interface. To drive a car, you only need to master this interface, not the complicated machinery underneath. The same principle is used in the world of software development as well.
+
+The API, or the Application Programming Interface, is a set of tools that allow a user (or rather, a programmer) to access an application’s functions without any knowledge of its inner workings.
+
+For example, Google Maps provides a Javascript API that lets anyone embed a fully customizable map in their web pages or mobile apps. Whenever you use an app displaying a map location or a route (or maybe recommending places to visit), chances are that the developers of the application leveraged the accuracy and power of Google Maps through this very API.
+
+
+### What does an API do?
+
+We gave the example of Google Maps, but that is far from the only place where you can find an API in action. In fact, APIs are ubiquitous in the computing world. Whether you are using a messaging app on your phone or browsing the internet on your PC, you are unknowingly using dozens of APIs.
+
+For example, consider you are playing a game on your phone. Simple things like showing the graphics on your screen, playing audio, and even registering your input are the domain of the operating system. Instead of directly interacting with the hardware, every app uses the API of the operating system to carry out these functions. And that’s not all. Every time you set a new high score that gets uploaded to the scoreboard, the app uses an API to store that data into an online database. Furthermore, sharing your score with your friends on Facebook or Whatsapp utilizes their own APIs.
+
+Booking a flight? API. Playing an embedded video? API. Streaming music? API.
+
+No matter what kind of application you use, whether offline or online, it uses several APIs to achieve its functionality. Indeed, one can consider most applications to be nothing but APIs layered on top of one another to achieve a particular goal. Software development is thus rarely about coding new features from scratch, but rather knowing and leveraging the relevant Application Programming Interfaces.
+
+### How does an API work?
+
+At its core, API is just a means of communication. As you might have heard before, computers have their own ‘languages’. C, C++, Javascript, Python are a few programming languages you may have heard of.
+
+The problem? There is no one standard language. Just like people coming from different countries might speak different languages, applications made by different people often use different programming languages too. This makes it very difficult for computer programs to communicate with one another, as the syntax (or the vocabulary) of one language rarely matches with the other.
+
+This is where API comes in.
+
+An API of a program provides a language-agnostic interface for communicating with it. Whether the program is coded in machine language or Java, another programmer can use its functions through the API. This makes APIs indispensable for all kinds of software, from web-based services to the applications making up your own personal computer as well.
+
+There are APIs for storing and recalling data into databases, for creating dynamic web pages, for integrating with social media tools and countless more. Any software feature you can think of has likely already been developed by someone else – and can be used in your own apps through a simple API.
+
+
+### API Structure
+As we have already discussed, the main purpose of an API is to facilitate app-to-app communication across different programming languages. But in the world of computers, communication needs to follow a strict format. Just like web traffic is governed by a formal set of rules called the HTTP (HyperText Transfer Protocol), APIs are built using protocols and architectures as well.
+
+### Low-Level APIs
+
+The simplest APIs are typically reserved for function libraries. Libraries like jQuery are meant to be integrated directly with the target application’s code, making complicated protocols unnecessary. Most ‘offline’ applications (such as video or input control) depend on such low-level APIs, which are simply a list of functions that can be called to achieve specific things. As a result, these are also language-specific.The simplest APIs are typically reserved for function libraries. Libraries like jQuery are meant to be integrated directly with the target application’s code, making complicated protocols unnecessary. Most ‘offline’ applications (such as video or input control) depend on such low-level APIs, which are simply a list of functions that can be called to achieve specific things. As a result, these are also language-specific.
+
+### SOAP
+
+Rolled out in the early days of the internet, SOAP was designed to leverage the same protocols used by the web. The idea was to rely on a tried and tested technology that was already deployed on most computers.
+
+SOAP stands for Simple Object Access Protocol, a name that encapsulates its aims perfectly. SOAP APIs use XML data format, a stricter subset of HTML that is the standard for web pages. While XML is a far more robust format than HTML, it is also more complex and intolerant of even the most minor errors, which makes XML difficult to use. Consequently, only developers building their application on the .NET framework use SOAP based APIs due to easy XML generation within these platforms.
+
+### REST
+
+REST was created as the answer to SOAP’s problems. Representational State Transfer (REST) may sound like a mouthful but is actually easier to use than SOAP.
+
+The reason for this is that REST is an architecture, not a strict protocol. Instead of laying down hard rules to be followed in communications (like XML) REST only specifies an overarching structure of representing and passing on data, leaving the actual details of the implementation to every individual application itself.
+
+For example, requesting some data in SOAP involves sending a very specific XML message, which has to be responded with an XML document. In contrast, a RESTful API (and that’s an actual term) only needs a URL with optional parameters and can reply in any format, most commonly the JSON data format.
+
+This has made REST the structure of choice for most API implementations, including the likes of Google and Twitter.
+
+### Client-Server Architecture
+
+Keep in mind that there are two sides involved in the functioning of an API: the client and the server. The server is the computer that actually implements the internal functions of an API, managing the data, and providing it upon request.
+
+The client, on the other hand, refers to the user making API calls and requesting the data. The client does not have to possess any knowledge about the technical details of the server, but only interface with it through the API provided. 
+
+
+### Methods
+
+Before we dive into the code, let us first understand how a RESTful API passes information. As you already know, REST is based on URLs. A server implementing REST would have a URL that is reserved for API calls. Whenever that URL is ‘pinged’ by the client, the server takes a look at the request and returns the appropriate data.
+
+The client makes a request to the server using a method. There are four common methods:
+
+GET - retrieves a specific piece of data or “resource”
+POST - creates a new resource
+PUT - updates an existing resource
+DELETE - deletes an existing resource
+The method tells the server what to do. For example, when a client passes a GET request, the server will retrieve (“get”) the information specified.
+
+### The Code
+Imagine you are building an application that queries your company servers for a list of products and displays it to the user. Your API call will look something like this:
+
+```
+‍
+
+$.get( "products.php", { query: "tv" } )
+  .done(show_list( data ) );
+
+‍
+```
+
+
+In this instance, you are the client requesting information from a server. We are contacting a server URL called “products.php”, sending a parameter called query with the value “tv”. We are requesting (GET) a list of products that match “tv”. When the API request is complete, the ‘.done’ part of the code executes. This is simply displaying the list we just requested and received via the API. That’s it. Everything else happens on the server-side.
+
+But what about using an established API like Google Maps? It must be more complicated, right?
+
+No. It is even easier.
+
+APIs provided by tech giants like Google or Facebook usually also provide an accompanying library. Just like we saw with jQuery above, these libraries provide functions that can be called directly without any know-how. For example, the small snippet below is all you need to get a fully functional map up and running on your webpage.
+
+
+```
+<div id="map"></div>
+    <script></script>
+      var map;
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: -34.397, lng: 150.644},
+          zoom: 8
+      }
+
+
+  ```
+
+
+
+
+As you can see, no GET or POST requests are needed. All you need to do is to call the relevant function provided by the Maps API, and Google will take care of the rest.
+
+You might have also noticed the additional parameters like lat, lng, zoom, etc. Most APIs have optional parameters for customizing the results. APIs have detailed documentation, which specifies how to use the API and all the optional parameters you can filter by or leverage. For example, here is the Google Maps API documentation for adding a map with a marker to your website.
+
+### Summary & Resources
+
+Application Programming Interfaces are the glue that binds applications together. Web applications are especially dependent on APIs. Common features like autocomplete suggestions and social media integration can be very difficult to implement from scratch, but require very little effort with the right API.
+
+There is a kingdom of useful information and functions on the internet. APIs are the keys to the kingdom. 
+
+#### Other Helpful Resources
+
+Zapier's Introduction to APIs
+ 
+Mozilla's Introduction to Web APIs
+
+Google APIs Explorer
+
+Facebook for Developers
+
+Twitter Developer Resources
